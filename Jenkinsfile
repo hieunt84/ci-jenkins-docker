@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                sh "git https://github.com/hieunt84/ci-jenkins-docker.git"
+                git 'https://github.com/hieunt84/ci-jenkins-docker.git'
         }
     }
         stage('Stage Build With Docker image') {
             steps {         
-                sh "docker build . -t happyit/myweb:${DOCKER_TAG}"
+                docker build . -t happyit/myweb:${DOCKER_TAG}
             }
         }
 
