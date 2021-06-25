@@ -19,13 +19,6 @@ pipeline {
                 sh "docker push happyit/myweb:${DOCKER_TAG}"
             }
         }
-
-        stage('Deploy with Docker') {
-            steps {                        
-                sh "docker run happyit/myweb:${DOCKER_TAG}"
-            }
-        }
-
     }
 }
 
