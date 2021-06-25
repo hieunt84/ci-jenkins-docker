@@ -20,6 +20,12 @@ pipeline {
             }
         }
 
+        stage('Deploy with Docker') {
+            steps {                        
+                sh "docker run happyit/myweb:${DOCKER_TAG}"
+            }
+        }
+
     }
 }
 
