@@ -16,7 +16,7 @@ pipeline {
                 //    sh "docker login -u happyit -p ${DockerHubPwd}"
                 //}               
                 
-                sh "docker login -u happyit -p Chualanh@2021"
+                sh "docker login -u happyit -p "
                 sh "docker push happyit/myweb:${DOCKER_TAG}"
             }
         }
