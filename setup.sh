@@ -39,7 +39,7 @@ swapoff -a
 
 
 ##########################################################################################
-# SECTION 2: INSTALL 
+# SECTION 2: INSTALL Docker
 
 # install docker
 
@@ -65,6 +65,14 @@ mkdir -p /etc/systemd/system/docker.service.d
 systemctl daemon-reload
 systemctl restart docker
 systemctl enable docker
+
+# Config docker
+sudo groupadd docker
+sudo usermod -aG docker ${USER}
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+sudo chmod 666 /var/run/docker.sock
+sudo systemctl restart docker
 
 ##########################################################################################
 # SECTION 3: INSTALL Jenkis

@@ -17,7 +17,7 @@ pipeline {
                 //}               
                 
                 sh "docker login -u happyit -p Chualanh@2021"
-                sh "docker push happyit/web2:${DOCKER_TAG}"
+                sh "docker push happyit/myweb:${DOCKER_TAG}"
             }
         }
                     
