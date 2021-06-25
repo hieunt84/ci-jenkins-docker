@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-      DOCKER_TAG = getVersion()
+    //  DOCKER_TAG = getVersion()
+      DOCKER_TAG = 1
     }
         stage('Stage Build With Docker image') {
             steps {         
@@ -21,7 +22,7 @@ pipeline {
     }
 }
 
-def getVersion(){
-    def commitHash = sh label: '', returnStdout: true, script: 'git rev-parse --short HEAD'
-    return commitHash
-}
+//def getVersion(){
+//    def commitHash = sh label: '', returnStdout: true, script: 'git rev-parse --short HEAD'
+//    return commitHash
+//}
