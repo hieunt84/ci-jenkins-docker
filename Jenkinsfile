@@ -3,12 +3,6 @@ pipeline {
     environment {
       DOCKER_TAG = getVersion()
     }
-    stages {
-        stage('Checkout Source from Github') {
-            steps {         
-                sh 'git https://github.com/hieunt84/ci-jenkins-docker.git'
-            }
-        }
         stage('Stage Build With Docker image') {
             steps {         
                 sh 'docker build . -t happyit/myweb:${DOCKER_TAG}'
