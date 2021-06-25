@@ -8,11 +8,13 @@
     - suggested plugin
 
 ### Step 3: Create pipeline job on jenkins
-    - Config withCredentials for docker-hub
+    - Config Credentials for docker-hub with name docker-hub
     - Create Jenkinsfile
 
 ### Step 4: Run job
+    - Check log each stage.
+    - Troubeshooting if need.
 
-### Step 5: Enjoy Resull
+### Step 5: Enjoy !!!
     - push image on dockerhub successfully.
 
