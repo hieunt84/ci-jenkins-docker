@@ -1,12 +1,17 @@
 pipeline {
     agent any
+    environment {
+      DOCKER_TAG = getVersion()
+    }
 
     stages {
-        stage('Hello') {
+        stage('Stage Build With Docker image') {
             steps {
-                sh 'docker build . -t happyit/myweb:v1'
+                sh 'docker build . -t happyit/myweb:${DOCKER_TAG}'
             }
         }
+
+
     }
 }
 
