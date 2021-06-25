@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+//                echo 'Hello World'
+                sh 'docker build . -t happyit/myweb:v1'
             }
         }
     }
