@@ -4,9 +4,13 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-//                echo 'Hello World'
                 sh 'docker build . -t happyit/myweb:v1'
             }
         }
     }
+}
+
+def getVersion(){
+    def commitHash = sh label: '', returnStdout: true, script: 'git rev-parse --short HEAD'
+    return commitHash
 }
