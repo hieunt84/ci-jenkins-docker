@@ -15,7 +15,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'docker_hub', variable: 'DockerHubPwd')]) {
                     sh 'docker login -u happyit -p ${DockerHubPwd}'
                 }               
-                sh 'docker push happyit/myweb:${DOCKER_TAG}'
+                sh "docker push happyit/myweb:${DOCKER_TAG}"
             }
         }
                     
