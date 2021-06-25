@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Stage Build With Docker image') {
             steps {         
-                sh "docker build . -t happyit/myweb:${DOCKER_TAG}"
+                sh 'docker build . -t happyit/myweb:${DOCKER_TAG}'
             }
         }
 
